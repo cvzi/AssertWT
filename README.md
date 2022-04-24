@@ -1,5 +1,5 @@
 AssertWT
-~~~~~~~~
+========
 
 Assert that a Python script is run in the Windows Terminal 'wt.exe' instead
 of the standard 'conhost.exe' console.

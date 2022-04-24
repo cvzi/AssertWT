@@ -65,11 +65,16 @@ def CD(argv):
 def restart(args=["wt", "-d", CD, "cmd", "/C", ARGV]):
     '''
     Restarts the script in the 'Windows Terminal' if it is available
+
     :param args: Choose how to run the script:
-        CMD: args=["wt", "-d", assertwt.CD, "cmd", "/C", assertwt.ARGV]
-        CMD (no exit): args=["wt", "-d", assertwt.CD, "cmd", "/K", assertwt.ARGV]
-        Powershell: args=["wt", "-d", assertwt.CD, "powershell", "-NoExit", "-Command", assertwt.ARGV]
-        Powershell (no exit): args=["wt", "-d", assertwt.CD, "powershell", "-Command", assertwt.ARGV]
+
+        CMD: ``["wt", "-d", assertwt.CD, "cmd", "/C", assertwt.ARGV]``
+
+        CMD (no exit): ``["wt", "-d", assertwt.CD, "cmd", "/K", assertwt.ARGV]``
+
+        Powershell: ``["wt", "-d", assertwt.CD, "powershell", "-NoExit", "-Command", assertwt.ARGV]``
+
+        Powershell (no exit): ``["wt", "-d", assertwt.CD, "powershell", "-Command", assertwt.ARGV]``
 
     '''
     if platform.system() != 'Windows' or 'WT_SESSION' in os.environ or 'idlelib' in sys.modules:

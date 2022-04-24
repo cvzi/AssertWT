@@ -62,17 +62,36 @@ script ends.</p>
 <h2>Install<a class="headerlink" href="#install" title="Permalink to this headline">¶</a></h2>
 <p><cite>pip install assertwt</cite></p>
 <p>See: <a class="reference external" href="https://pypi.org/project/assertwt/">https://pypi.org/project/assertwt/</a></p>
-<div class="section" id="module-assertwt">
-<span id="functions"></span><h3>Functions<a class="headerlink" href="#module-assertwt" title="Permalink to this headline">¶</a></h3>
-<div class="section" id="id1">
-<h4>AssertWT<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h4>
-<p>Assert that a Python script is run in the Windows Terminal ‘wt.exe’ instead
-of the standard ‘conhost.exe’ console.</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">assertwt</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">assertwt</span><span class="o">.</span><span class="n">restart</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
+<div class="section" id="functions">
+<h3>Functions<a class="headerlink" href="#functions" title="Permalink to this headline">¶</a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="assertwt.restart">
+<span class="sig-prename descclassname"><span class="pre">assertwt.</span></span><span class="sig-name descname"><span class="pre">restart</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">args=['wt',</span> <span class="pre">'-d',</span> <span class="pre">&lt;function</span> <span class="pre">CD&gt;,</span> <span class="pre">'cmd',</span> <span class="pre">'/C',</span> <span class="pre">&lt;function</span> <span class="pre">ARGV&gt;]</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/assertwt.html#restart"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#assertwt.restart" title="Permalink to this definition">¶</a></dt>
+<dd><p>Restarts the script in the ‘Windows Terminal’ if it is available</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>args</strong> – <p>Choose how to run the script:</p>
+<p>CMD: <code class="docutils literal notranslate"><span class="pre">[&quot;wt&quot;,</span> <span class="pre">&quot;-d&quot;,</span> <span class="pre">assertwt.CD,</span> <span class="pre">&quot;cmd&quot;,</span> <span class="pre">&quot;/C&quot;,</span> <span class="pre">assertwt.ARGV]</span></code></p>
+<p>CMD (no exit): <code class="docutils literal notranslate"><span class="pre">[&quot;wt&quot;,</span> <span class="pre">&quot;-d&quot;,</span> <span class="pre">assertwt.CD,</span> <span class="pre">&quot;cmd&quot;,</span> <span class="pre">&quot;/K&quot;,</span> <span class="pre">assertwt.ARGV]</span></code></p>
+<p>Powershell: <code class="docutils literal notranslate"><span class="pre">[&quot;wt&quot;,</span> <span class="pre">&quot;-d&quot;,</span> <span class="pre">assertwt.CD,</span> <span class="pre">&quot;powershell&quot;,</span> <span class="pre">&quot;-NoExit&quot;,</span> <span class="pre">&quot;-Command&quot;,</span> <span class="pre">assertwt.ARGV]</span></code></p>
+<p>Powershell (no exit): <code class="docutils literal notranslate"><span class="pre">[&quot;wt&quot;,</span> <span class="pre">&quot;-d&quot;,</span> <span class="pre">assertwt.CD,</span> <span class="pre">&quot;powershell&quot;,</span> <span class="pre">&quot;-Command&quot;,</span> <span class="pre">assertwt.ARGV]</span></code></p>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="assertwt.ARGV">
+<span class="sig-prename descclassname"><span class="pre">assertwt.</span></span><span class="sig-name descname"><span class="pre">ARGV</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">argv</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/assertwt.html#ARGV"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#assertwt.ARGV" title="Permalink to this definition">¶</a></dt>
+<dd><p>Placeholder in args list that represents the original command line arguments</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="assertwt.CD">
+<span class="sig-prename descclassname"><span class="pre">assertwt.</span></span><span class="sig-name descname"><span class="pre">CD</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">argv</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/assertwt.html#CD"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#assertwt.CD" title="Permalink to this definition">¶</a></dt>
+<dd><p>Placeholder in args list that represents the current working directory</p>
+</dd></dl>
+
 </div>
 <div class="section" id="indices-and-tables">
 <h3>Indices and tables<a class="headerlink" href="#indices-and-tables" title="Permalink to this headline">¶</a></h3>

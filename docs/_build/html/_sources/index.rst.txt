@@ -49,7 +49,9 @@ See: https://pypi.org/project/assertwt/
 Functions
 =========
 .. currentmodule:: assertwt
-.. automodule:: assertwt
+.. autofunction:: restart
+.. autofunction:: ARGV
+.. autofunction:: CD
 
 Indices and tables
 ==================
