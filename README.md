@@ -39,3 +39,8 @@ pip install assertwt
 ```
 
 See: [https://pypi.org/project/assertwt/](https://pypi.org/project/assertwt/)
+
+Documentation
+-------------
+
+https://assertwt.readthedocs.io
