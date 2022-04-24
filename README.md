@@ -4,8 +4,10 @@ AssertWT
 Assert that a Python script is run in the Windows Terminal 'wt.exe' instead
 of the standard 'conhost.exe' console.
 
+```python
     >>> import assertwt
     >>> assertwt.restart()
+```
 
 By default the script is run with cmd.exe and the window is closed when the
 script ends.
@@ -32,6 +34,8 @@ assertwt.restart(["wt", "new-tab", "-d", assertwt.CD, "cmd", "/K", assertwt.ARGV
 Install
 -------
 
-`pip install assertwt`
+```shell
+pip install assertwt
+```
 
 See: [https://pypi.org/project/assertwt/](https://pypi.org/project/assertwt/)
