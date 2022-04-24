@@ -1,0 +1,151 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AssertWT &#8212; AssertWT 1.0.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/alabaster.css" />
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="toctree-wrapper compound">
+</div>
+<div class="section" id="assertwt">
+<h1>AssertWT<a class="headerlink" href="#assertwt" title="Permalink to this headline">¶</a></h1>
+<p>Assert that a Python script is run in the Windows Terminal ‘wt.exe’ instead
+of the standard ‘conhost.exe’ console.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">assertwt</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">assertwt</span><span class="o">.</span><span class="n">restart</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>By default the script is run with cmd.exe and the window is closed when the
+script ends.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Default behaviour: cmd.exe and window closes after script:</span>
+<span class="n">assertwt</span><span class="o">.</span><span class="n">restart</span><span class="p">([</span><span class="s2">&quot;wt&quot;</span><span class="p">,</span> <span class="s2">&quot;-d&quot;</span><span class="p">,</span> <span class="n">assertwt</span><span class="o">.</span><span class="n">CD</span><span class="p">,</span> <span class="s2">&quot;cmd&quot;</span><span class="p">,</span> <span class="s2">&quot;/C&quot;</span><span class="p">,</span> <span class="n">assertwt</span><span class="o">.</span><span class="n">ARGV</span><span class="p">])</span>
+
+<span class="c1"># cmd.exe and windows does not close after script:</span>
+<span class="n">assertwt</span><span class="o">.</span><span class="n">restart</span><span class="p">([</span><span class="s2">&quot;wt&quot;</span><span class="p">,</span> <span class="s2">&quot;-d&quot;</span><span class="p">,</span> <span class="n">assertwt</span><span class="o">.</span><span class="n">CD</span><span class="p">,</span> <span class="s2">&quot;cmd&quot;</span><span class="p">,</span> <span class="s2">&quot;/K&quot;</span><span class="p">,</span> <span class="n">assertwt</span><span class="o">.</span><span class="n">ARGV</span><span class="p">])</span>
+
+<span class="c1"># Powershell and window closes after script:</span>
+<span class="n">assertwt</span><span class="o">.</span><span class="n">restart</span><span class="p">([</span><span class="s2">&quot;wt&quot;</span><span class="p">,</span> <span class="s2">&quot;-d&quot;</span><span class="p">,</span> <span class="n">assertwt</span><span class="o">.</span><span class="n">CD</span><span class="p">,</span> <span class="s2">&quot;powershell&quot;</span><span class="p">,</span> <span class="s2">&quot;-Command&quot;</span><span class="p">,</span> <span class="n">assertwt</span><span class="o">.</span><span class="n">ARGV</span><span class="p">])</span>
+
+<span class="c1"># Powershell and windows does not close after script:</span>
+<span class="n">assertwt</span><span class="o">.</span><span class="n">restart</span><span class="p">([</span><span class="s2">&quot;wt&quot;</span><span class="p">,</span> <span class="s2">&quot;-d&quot;</span><span class="p">,</span> <span class="n">assertwt</span><span class="o">.</span><span class="n">CD</span><span class="p">,</span> <span class="s2">&quot;powershell&quot;</span><span class="p">,</span> <span class="s2">&quot;-NoExit&quot;</span><span class="p">,</span> <span class="s2">&quot;-Command&quot;</span><span class="p">,</span> <span class="n">assertwt</span><span class="o">.</span><span class="n">ARGV</span><span class="p">])</span>
+
+<span class="c1"># New tab in existing Windows Terminal window:</span>
+<span class="n">assertwt</span><span class="o">.</span><span class="n">restart</span><span class="p">([</span><span class="s2">&quot;wt&quot;</span><span class="p">,</span> <span class="s2">&quot;new-tab&quot;</span><span class="p">,</span> <span class="s2">&quot;-d&quot;</span><span class="p">,</span> <span class="n">assertwt</span><span class="o">.</span><span class="n">CD</span><span class="p">,</span> <span class="s2">&quot;cmd&quot;</span><span class="p">,</span> <span class="s2">&quot;/K&quot;</span><span class="p">,</span> <span class="n">assertwt</span><span class="o">.</span><span class="n">ARGV</span><span class="p">])</span>
+</pre></div>
+</div>
+<div class="section" id="install">
+<h2>Install<a class="headerlink" href="#install" title="Permalink to this headline">¶</a></h2>
+<p><cite>pip install assertwt</cite></p>
+<p>See: <a class="reference external" href="https://pypi.org/project/assertwt/">https://pypi.org/project/assertwt/</a></p>
+<div class="section" id="module-assertwt">
+<span id="functions"></span><h3>Functions<a class="headerlink" href="#module-assertwt" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id1">
+<h4>AssertWT<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h4>
+<p>Assert that a Python script is run in the Windows Terminal ‘wt.exe’ instead
+of the standard ‘conhost.exe’ console.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">assertwt</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">assertwt</span><span class="o">.</span><span class="n">restart</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="indices-and-tables">
+<h3>Indices and tables<a class="headerlink" href="#indices-and-tables" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p><a class="reference internal" href="genindex.html"><span class="std std-ref">Index</span></a></p></li>
+<li><p><a class="reference internal" href="py-modindex.html"><span class="std std-ref">Module Index</span></a></p></li>
+<li><p><a class="reference internal" href="search.html"><span class="std std-ref">Search Page</span></a></p></li>
+</ul>
+</div>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="#">AssertWT</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="#">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      
+      
+      
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 4.4.0</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="_sources/index.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
