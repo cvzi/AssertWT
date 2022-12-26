@@ -17,7 +17,7 @@ import platform
 import ctypes
 import logging
 
-__version__ = '2.0.0'
+__version__ = '2.1.0'
 __author__ = 'cuzi'
 __email__ = 'cuzi@openmail.cc'
 __source__ = 'https://github.com/cvzi/AssertWt/'
@@ -64,7 +64,7 @@ def ARGV(argv):
     return subprocess.list2cmdline(argv)
 
 
-def CD():
+def CD(argv):
     '''
     Placeholder in args list that represents the current working directory
     '''
