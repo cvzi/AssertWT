@@ -50,6 +50,7 @@ Functions
 =========
 .. currentmodule:: assertwt
 .. autofunction:: restart
+.. autofunction:: is_wt
 .. autofunction:: ARGV
 .. autofunction:: CD
 
