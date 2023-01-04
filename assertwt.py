@@ -109,6 +109,10 @@ def restart(args=["wt", "-d", CD, "cmd", "/C", ARGV]):
     if is_wt():
         return
 
+    _open_wt(_generate_popen_args(args))
+
+
+def _generate_popen_args(args):
     import ctypes.wintypes
     GetCommandLineW = ctypes.windll.kernel32.GetCommandLineW
     GetCommandLineW.restype = ctypes.wintypes.LPWSTR
@@ -123,8 +127,10 @@ def restart(args=["wt", "-d", CD, "cmd", "/C", ARGV]):
     argv = CommandLineToArgvW(GetCommandLineW(), ctypes.byref(argn))[
         :argn.value]
 
-    popenargs = [arg(argv) if callable(arg) else arg for arg in args]
+    return [arg(argv) if callable(arg) else arg for arg in args]
 
+
+def _open_wt(popenargs):
     try:
         subprocess.run(popenargs, check=True, capture_output=True)
         exit(0)
