@@ -125,7 +125,7 @@ def restart(args=["wt", "-d", CD, "cmd", "/C", ARGV]):
     args = [arg(argv) if callable(arg) else arg for arg in args]
 
     try:
-        subprocess.run(args, shell=True, check=True, capture_output=True)
+        subprocess.run(args, check=True, capture_output=True)
         exit(0)
     except subprocess.CalledProcessError as e:
         logging.debug(e)
