@@ -102,6 +102,7 @@ def restart(args=["wt", "-d", CD, "cmd", "/C", ARGV]):
         Powershell (no exit): ``["wt", "-d", assertwt.CD, "powershell", "-Command", assertwt.ARGV]``
 
     '''
+
     if platform.system() != 'Windows' or 'idlelib' in sys.modules:
         return
 
@@ -122,10 +123,10 @@ def restart(args=["wt", "-d", CD, "cmd", "/C", ARGV]):
     argv = CommandLineToArgvW(GetCommandLineW(), ctypes.byref(argn))[
         :argn.value]
 
-    args = [arg(argv) if callable(arg) else arg for arg in args]
+    popenargs = [arg(argv) if callable(arg) else arg for arg in args]
 
     try:
-        subprocess.run(args, check=True, capture_output=True)
+        subprocess.run(popenargs, check=True, capture_output=True)
         exit(0)
     except subprocess.CalledProcessError as e:
         logging.debug(e)
