@@ -54,7 +54,6 @@ __all__ = [
     "ARGV",
     "CD",
 ]
-err = None
 
 
 def ARGV(argv):
@@ -89,7 +88,6 @@ def is_wt():
 
 
 def restart(args=["wt", "-d", CD, "cmd", "/C", ARGV]):
-    global err
     '''
     Restarts the script in the 'Windows Terminal' if it is available
 
