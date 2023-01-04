@@ -58,7 +58,8 @@ __all__ = [
 
 def ARGV(argv):
     '''
-    Placeholder in args list that represents the original command line arguments
+    Placeholder in args list that represents the original command line
+    arguments
     '''
     return subprocess.list2cmdline(argv)
 
