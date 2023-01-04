@@ -17,7 +17,7 @@ import platform
 import ctypes
 import logging
 
-__version__ = '2.1.0'
+__version__ = '2.2.0'
 __author__ = 'cuzi'
 __email__ = 'cuzi@openmail.cc'
 __source__ = 'https://github.com/cvzi/AssertWt/'
