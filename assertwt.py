@@ -107,6 +107,10 @@ def restart(args=["wt", "-d", CD, "cmd", "/C", ARGV]):
     if platform.system() != 'Windows' or 'idlelib' in sys.modules:
         return
 
+    sys_executable = sys.executable.lower()
+    if sys_executable.endswith('pythonw.exe') or sys_executable.endswith('pythonw'):
+        return
+
     if is_wt():
         return
 
