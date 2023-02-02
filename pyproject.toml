@@ -1,0 +1,38 @@
+[build-system]
+requires = ["setuptools>=67.1"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "AssertWT"
+dynamic = ["version"]
+authors = [{name = "cuzi", email = "cuzi@openmail.cc"}]
+license = {text = "Unlicense"}
+description = "Run a Python script in Windows Terminal wt.exe"
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.6",
+    "Programming Language :: Python :: 3.7",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "License :: OSI Approved :: The Unlicense (Unlicense)",
+]
+[project.urls]
+Homepage = "https://github.com/cvzi/AssertWT"
+Documentation = "https://assertwt.readthedocs.io"
+Downloads = "https://pypi.org/project/AssertWT/"
+
+[project.readme]
+file = "README.md"
+content-type = "text/markdown"
+
+[tool.setuptools]
+py-modules = ["assertwt"]
+zip-safe = true
+include-package-data = false
+
+[tool.setuptools.dynamic]
+version = {attr = "assertwt.__version__"}
