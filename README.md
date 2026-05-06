@@ -31,6 +31,10 @@ assertwt.restart(["wt", "new-tab", "-d", assertwt.CD, "cmd", "/K", assertwt.ARGV
 
 ```
 
+If Windows Terminal is set as the default on the machine, you can still open a
+conhost-window by running `conhost.exe` in the Windows Terminal to test the behavior.
+
+
 Install
 -------
 

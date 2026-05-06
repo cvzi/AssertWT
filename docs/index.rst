@@ -37,12 +37,19 @@ script ends.
     # New tab in existing Windows Terminal window:
     assertwt.restart(["wt", "new-tab", "-d", assertwt.CD, "cmd", "/K", assertwt.ARGV])
 
+
+If Windows Terminal is set as the default on the machine, you can still open a
+conhost-window by running ``conhost.exe`` in the Windows Terminal to test the behavior.
+
 ..
 
 Install
 -------
 
-`pip install assertwt`
+.. code-block:: shell
+
+    pip install assertwt
+
 
 See: https://pypi.org/project/assertwt/
 
